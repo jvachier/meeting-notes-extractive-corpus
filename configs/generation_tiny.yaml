@@ -1,0 +1,10 @@
+# Smoke config: same settings as generation.yaml with tiny volumes, runs in < 30 s.
+# Used by the determinism test (PLAN §7.6). Keys here are deep-merged over the parent.
+extends: generation.yaml
+
+volumes:
+  synthetic_notes_per_type: 4
+  hard_negative_notes_per_type: 2
+
+composition:
+  max_segment_reuse: 1000

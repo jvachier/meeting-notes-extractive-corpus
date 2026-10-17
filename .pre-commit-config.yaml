@@ -1,0 +1,39 @@
+# Install once with: uv run pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: mixed-line-ending
+        args: [--fix=lf]
+
+  # Local hooks run the tool versions pinned in uv.lock, so pre-commit and CI never drift.
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: uv run ruff check --fix
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: system
+        types_or: [python, pyi]
+      - id: validate-seeds
+        name: validate seeds
+        entry: uv run python -m processing.validate_seeds
+        language: system
+        pass_filenames: false
+        files: ^(seeds/|generation/lexicons/|generation/(schema|slots|config)\.py|processing/validate_seeds\.py|configs/)
+      - id: no-data-files
+        name: data/ is never committed
+        entry: data/ is git-ignored; generated and downloaded data must not be committed
+        language: fail
+        files: ^data/
