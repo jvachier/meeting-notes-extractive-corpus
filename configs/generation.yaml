@@ -1,0 +1,137 @@
+# Generation config for meeting-notes-extractive-v1.
+# Every volume, ratio, probability and length range used by the pipeline lives here (CLAUDE.md).
+# Section references point to PLAN.md.
+
+seed: 1729
+
+# §3.1 meeting types and §4.1 grammar.
+# words: target meeting length (whitespace words); participants: inclusive range.
+# context_segments: how many context segments open the meeting.
+# zone_weights: relative weights of body zones (must sum to 1).
+meeting_types:
+  quick_sync:
+    words: [150, 300]
+    participants: [2, 3]
+    context_segments: [1, 1]
+    zone_weights: {discussion: 0.30, decision: 0.15, action_item: 0.55}
+  standup:
+    words: [300, 450]
+    participants: [3, 6]
+    context_segments: [1, 1]
+    zone_weights: {discussion: 0.50, decision: 0.10, action_item: 0.40}
+  project_review:
+    words: [600, 1100]
+    participants: [4, 7]
+    context_segments: [1, 2]
+    zone_weights: {discussion: 0.35, decision: 0.45, action_item: 0.20}
+  stakeholder_update:
+    words: [450, 750]
+    participants: [3, 6]
+    context_segments: [1, 2]
+    zone_weights: {discussion: 0.45, decision: 0.35, action_item: 0.20}
+  retrospective:
+    words: [500, 900]
+    participants: [4, 8]
+    context_segments: [1, 2]
+    zone_weights: {discussion: 0.45, decision: 0.20, action_item: 0.35}
+
+# §3.3
+domains:
+  - engineering
+  - product
+  - sales
+  - marketing
+  - customer_support
+  - hr_people
+  - finance_ops
+  - research
+
+# §4.2 composition.
+composition:
+  closing_segments: [1, 1]
+  p_cross_domain: 0.20       # fall back to a segment from another domain
+  p_filler: 0.30             # filler between two segments
+  p_interrupt: 0.05          # filler inside a segment, only between importance-0 sentences
+  p_opening_filler: 0.50     # an `opening` filler before the first context segment
+  p_closing_filler: 0.50     # a `closing_chatter` filler after the closing segment
+  max_segment_reuse: 120     # cap on placements of one segment across the corpus (see report §4d)
+  # Segment choice weight = type_weight (if the meeting type matches) x domain_weight (if the
+  # domain matches, or if it differs on a cross-domain draw) x (1 - uses / cap) ** reuse_penalty_power.
+  type_weight: 1000.0
+  domain_weight: 100.0
+  reuse_penalty_power: 4.0
+  max_attempts: 50           # retries to fit a meeting into its word range
+  # Slots redrawn for every segment instead of once per meeting: quantities and dates differ
+  # between unrelated exchanges, while entities (PROJECT, CLIENT, ...) stay fixed per meeting.
+  segment_scoped_slots: [NUMBER, PERCENT, MONEY, DATE_REL, DATE_ABS]
+
+# §4.2 step 6 (ASR rendering). Noise never changes labels.
+noise:
+  p_disfl: 0.15              # per sentence: add one disfluency
+  disfluency_tokens: ["um", "uh"]
+  p_repetition: 0.30         # share of disfluencies that are a one-word repetition instead
+
+# §4.3 volumes.
+volumes:
+  synthetic_notes_per_type: 250   # halved from PLAN v0 (500) to keep seed reuse near §4.3
+  hard_negative_notes_per_type: 50 # halved from PLAN v0 (100), same reason
+  hard_negative_segments: [3, 4]  # per hard-negative meeting (PLAN §4.3: at least 3)
+
+# §4.4 splits.
+splits:
+  ratios: {train: 0.8, validation: 0.1, test: 0.1}
+  stratify_tolerance: 0.05   # max abs deviation of a stratum's split share from its ratio
+
+# §2.1, §3.4–3.6 seed checks (processing.validate_seeds).
+seeds:
+  segment_sentences: [2, 12]
+  segment_confidence: [0.6, 1.0]
+  hard_negative_confidence: [0.6, 0.8]
+  discussion_importance_target: 0.30
+  discussion_importance_tolerance: 0.10
+  discussion_rate_min_segments: 20   # only check the rate once this many discussion segments exist
+  variant_similarity_max: 0.80       # word-3-gram Jaccard between two variants of one family
+  fillers_target: 250
+
+# §3.2 lexicons: minimum number of values per slot file.
+lexicons:
+  min_values:
+    PERSON: 400
+    TEAM: 30
+    PROJECT: 60
+    PRODUCT: 60
+    CLIENT: 60
+    TOOL: 40
+    DATE_REL: 40
+    DATE_ABS: 60
+    NUMBER: 40
+    PERCENT: 30
+    MONEY: 40
+    METRIC: 40
+
+# §7 quality checks.
+quality:
+  ngram_n: 8
+  max_test_ngram_overlap: 0.01
+  near_duplicate_ngram: 3
+  near_duplicate_jaccard: 0.80
+  top_trigger_words: 50
+  trigger_min_count: 30          # a word needs this many occurrences to be ranked
+  trigger_min_families: 5        # ...and must occur in this many seed families (skips one-off topic words)
+  # Keyword rule baseline (§7.5): predict importance 1 if a sentence contains any of these.
+  rule_keywords: [decide, decided, decision, agreed, agree, "let's", will, "'ll", by, deadline,
+                  owner, action, risk, blocked, blocker, percent, need, must, plan, target, goal]
+  max_rule_f1_gap: 0.25          # warn when synthetic-test F1 exceeds AMI-test F1 by more
+
+# §5 AMI.
+ami:
+  version: "1.6.2"
+  url: "https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip"
+  confidence:
+    extracted_linked: 0.9      # linked to a decisions / actions / problems summary sentence
+    extracted_other: 0.8       # linked to abstract only, or not linked
+    not_extracted: 0.8
+  # Standard AMI scenario partition, by meeting series (a-d). Every other series is train.
+  partition:
+    validation: [ES2003, ES2011, IS1008, TS3004, TS3006]
+    test: [ES2004, ES2014, IS1009, TS3003, TS3007]

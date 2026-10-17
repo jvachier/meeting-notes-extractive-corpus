@@ -1,0 +1,42 @@
+SEEDING BRIEF: retrospective
+============================
+Read with the `write-seed-segments` skill, which holds the shared labelling rules. This brief
+only adds what is specific to retrospectives.
+
+THE MEETING
+- 4–8 people, 500–900 words, after a sprint, launch, incident or quarter. A facilitator (S1)
+  runs it; the whole team speaks.
+- Structure: what went well, what didn't, what we change. Ends with a short list of
+  improvement actions with owners.
+
+REGISTER
+- Reflective and conversational, some emotion ("honestly that week was rough"), people build
+  on each other's points, more speakers per segment than other types.
+
+WHAT EACH ZONE LOOKS LIKE HERE
+- context: what we're looking back on and the format. "We're looking back at the {PROJECT}
+  launch, went well first, then what to change." (1 for the scope; 0 for format chatter).
+- discussion: observations. Important (1): a concrete problem or root cause, a measured
+  outcome, a recurring pain point ("Three of the five incidents came from config changes.").
+  Chatter (0): agreement, venting without content, "+1", jokes, "yeah, same".
+- decision: agreed process changes. "From next sprint, every config change needs a second
+  reviewer." (1). Murmurs of agreement (decision, 0).
+- action_item: improvement actions. "{S5|owner} will draft the new checklist by
+  {DATE_REL|deadline}." (1). Retro action items often have a team owner: "{TEAM|owner}".
+- closing: thanks, and when the actions will be reviewed (1 if dated).
+
+GOOD SEGMENT SHAPES
+- Several people adding to one theme (4–5 speakers), one important root-cause line.
+- A positive observation that is important because it should be kept ("Pairing on reviews cut
+  our turnaround to {NUMBER} hours.").
+- A change proposed, refined by someone else, then agreed (only the agreed version is 1).
+
+AVOID
+- Every complaint being important: venting is chatter unless it names a concrete problem.
+- Blame aimed at named people; retros talk about process.
+
+EXAMPLE (action_item, retrospective, marketing)
+{"speaker": "S1", "text": "So who wants to own the launch checklist idea?", "importance": 0, "zone": "discussion"}
+{"speaker": "S3", "text": "I'll take it, I complained the most.", "importance": 0, "zone": "action_item"}
+{"speaker": "S3", "text": "{S3|owner} will share a first draft by {DATE_REL|deadline}.", "importance": 1, "zone": "action_item"}
+{"speaker": "S4", "text": "Happy to review it.", "importance": 0, "zone": "action_item"}

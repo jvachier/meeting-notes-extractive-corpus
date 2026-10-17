@@ -1,0 +1,44 @@
+# Lowercase noun phrase, no article; fits "our {METRIC} dropped".
+churn
+conversion rate
+p95 latency
+error rate
+uptime
+ticket backlog
+first response time
+customer satisfaction score
+net promoter score
+average handle time
+monthly active users
+weekly signups
+trial-to-paid conversion
+pipeline coverage
+win rate
+average deal size
+cost per lead
+click-through rate
+open rate
+bounce rate
+page load time
+crash-free sessions
+build time
+deploy frequency
+mean time to recovery
+test coverage
+time to hire
+offer acceptance rate
+employee turnover
+engagement score
+days sales outstanding
+cash runway
+gross margin
+burn rate
+forecast accuracy
+invoice cycle time
+recruitment rate
+survey response rate
+inter-rater agreement
+renewal rate
+escalation rate
+resolution time
+retention after thirty days

@@ -1,0 +1,44 @@
+SEEDING BRIEF: project_review
+=============================
+Read with the `write-seed-segments` skill, which holds the shared labelling rules. This brief
+only adds what is specific to project reviews.
+
+THE MEETING
+- 4–7 people, 600–1,100 words, a scheduled review of one project or milestone, chaired by a
+  lead (S1). Leads, specialists and sometimes a manager attend.
+- Agenda-driven: status vs plan, risks, open questions, then explicit decisions and owners.
+- Decision-heavy: the typical review makes 2–4 decisions and assigns several owners.
+
+REGISTER
+- Semi-formal, longer turns, reasoning out loud, trade-offs and numbers ({PERCENT}, {MONEY},
+  {NUMBER}, {METRIC}, {DATE_ABS}).
+- Disagreement is normal; decisions are stated explicitly by the chair or the owner.
+
+WHAT EACH ZONE LOOKS LIKE HERE
+- context: agenda and goal. "Today we review {PROJECT} against the {DATE_ABS} milestone and
+  decide on scope." (1). "Let's wait a minute for {PERSON}." (0).
+- discussion: trade-offs, risks, evidence. Important (1): risks, key numbers, dependencies,
+  findings ("Error rate is at {PERCENT}, above our {PERCENT} target."). Chatter (0): framing,
+  rhetorical questions, "good point", restating what someone just said.
+- decision: options weighed, then a clear call. Exactly one sentence carries the decision as
+  importance 1; deliberation before it is discussion; acknowledgements after it are decision, 0.
+  If the decision is restated a turn later, only the first, clearest statement is 1.
+- action_item: owners for follow-ups from the decisions. "{S4|owner} will update the risk log
+  by {DATE_REL|deadline}." (1).
+- closing: recap and next review. The recap repeats decisions, so it is 0; the date of the
+  next review is 1.
+
+GOOD SEGMENT SHAPES
+- 5–10 sentences, 3–4 speakers, with a real disagreement before the decision.
+- A decision with a condition ("We go ahead, but only if the audit passes.") is still 1.
+- A discussion segment with two important facts and four chatter lines.
+
+AVOID
+- Decisions that come out of nowhere: give one or two lines of reasoning.
+- Vague closings that restate everything; keep closings short.
+
+EXAMPLE (decision, project_review, research)
+{"speaker": "S2", "text": "The pilot sample is smaller than planned, only {NUMBER} participants.", "importance": 1, "zone": "discussion"}
+{"speaker": "S3", "text": "That's still enough for a directional read, I think.", "importance": 0, "zone": "discussion"}
+{"speaker": "S1", "text": "Agreed, we run the analysis on the pilot data and don't extend recruitment.", "importance": 1, "zone": "decision"}
+{"speaker": "S2", "text": "Okay.", "importance": 0, "zone": "decision"}

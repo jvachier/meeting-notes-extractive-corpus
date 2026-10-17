@@ -1,0 +1,8 @@
+# Default owner for everything in the repository.
+* @jvachier
+
+# Seeds and lexicons are dataset source: every label change needs the owner's review.
+/seeds/               @jvachier
+/generation/lexicons/ @jvachier
+/generation/prompts/  @jvachier
+/PLAN.md              @jvachier

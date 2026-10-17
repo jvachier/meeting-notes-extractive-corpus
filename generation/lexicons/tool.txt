@@ -1,0 +1,47 @@
+# Generic tools and systems: lowercase noun phrase with "the".
+the dashboard
+the CI pipeline
+the staging environment
+the CRM
+the shared drive
+the wiki
+the ticketing system
+the roadmap doc
+the sprint board
+the expense tool
+the HR portal
+the payroll system
+the data warehouse
+the BI dashboard
+the feature flag service
+the build server
+the release checklist
+the status page
+the knowledge base
+the help center
+the chatbot
+the survey tool
+the analytics dashboard
+the design system
+the prototype
+the test suite
+the deployment script
+the billing system
+the invoicing tool
+the procurement portal
+the applicant tracking system
+the onboarding checklist
+the content calendar
+the email platform
+the ad manager
+the lead scoring model
+the forecast spreadsheet
+the budget tracker
+the lab notebook
+the experiment tracker
+the scheduling tool
+the internal API
+the admin panel
+the error tracker
+the support inbox
+the call recording tool

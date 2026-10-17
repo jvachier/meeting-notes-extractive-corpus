@@ -1,0 +1,41 @@
+# Lowercase noun phrase with "the".
+the platform team
+the data team
+the design team
+the growth team
+the billing team
+the security team
+the mobile team
+the infrastructure team
+the analytics team
+the onboarding team
+the partnerships team
+the procurement team
+the payroll team
+the legal team
+the brand team
+the content team
+the field sales team
+the enterprise sales team
+the customer success team
+the tier-two support team
+the recruiting team
+the people ops team
+the facilities team
+the finance team
+the treasury team
+the research ops team
+the QA team
+the localization team
+the pricing team
+the web team
+the API team
+the search team
+the payments team
+the compliance team
+the events team
+the developer relations team
+the solutions engineering team
+the IT helpdesk team
+the learning and development team
+the revenue operations team

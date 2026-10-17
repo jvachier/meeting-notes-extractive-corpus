@@ -1,0 +1,43 @@
+SEEDING BRIEF: stakeholder_update
+=================================
+Read with the `write-seed-segments` skill, which holds the shared labelling rules. This brief
+only adds what is specific to stakeholder updates.
+
+THE MEETING
+- 3–6 people, 450–750 words. A team lead (S1) updates senior stakeholders, a sponsor or a
+  client-facing manager. Stakeholders ask pointed questions and make high-level calls.
+- Topics: progress vs commitments, budget ({MONEY}), timelines ({DATE_ABS}), risks needing
+  escalation, asks ("we need a decision on…").
+- Decisions are high-level: approve budget, accept a delay, change priority, sign off scope.
+
+REGISTER
+- Polished and summary-level: "Overall we're on track", "the headline is". Less jargon.
+- Stakeholders speak briefly and decisively; the presenter speaks in longer turns.
+
+WHAT EACH ZONE LOOKS LIKE HERE
+- context: purpose and headline. "The goal today is to get your sign-off on the {PRODUCT}
+  launch date." (1). Pleasantries (0).
+- discussion: headline facts and asks. Important (1): status against commitments, slips,
+  budget variance, escalated risks, the explicit ask. Chatter (0): polite framing ("as you
+  know"), positive filler ("the team has been great"), clarifying questions with no new fact.
+- decision: usually made by a stakeholder (S2/S3), not the presenter. "Approved, take the
+  extra {MONEY} from the contingency." (1). "Thanks, that's helpful." (decision, 0).
+- action_item: mostly the presenter taking follow-ups, sometimes a stakeholder offering help.
+  "{S1|owner} will send the revised plan to the steering group by {DATE_REL|deadline}." (1).
+- closing: next update date (1), thanks (0).
+
+GOOD SEGMENT SHAPES
+- Presenter states a fact, stakeholder probes once, presenter answers with a number (1).
+- An ask followed by a stakeholder decision, with one condition attached.
+- Deferred decisions: "Let me think about it and come back to you by {DATE_REL}." is an action
+  item for the stakeholder (1), not a decision.
+
+AVOID
+- Engineering detail: stakeholders get the summary.
+- Labelling every presenter sentence important: much of it is framing.
+
+EXAMPLE (discussion, stakeholder_update, finance_ops)
+{"speaker": "S1", "text": "So the headline is that we're slightly over budget this quarter.", "importance": 0, "zone": "discussion"}
+{"speaker": "S1", "text": "We're {MONEY} above plan, mostly from the vendor switch.", "importance": 1, "zone": "discussion"}
+{"speaker": "S2", "text": "Is that a one-off or will it recur?", "importance": 0, "zone": "discussion"}
+{"speaker": "S1", "text": "One-off, the new contract is cheaper from next quarter.", "importance": 1, "zone": "discussion"}
