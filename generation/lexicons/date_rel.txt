@@ -1,0 +1,43 @@
+# Relative dates; each reads naturally after "by", "before" and "until".
+tomorrow
+tomorrow morning
+tomorrow afternoon
+end of day
+end of day today
+end of day Friday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+next Monday
+next Tuesday
+next Wednesday
+next Thursday
+next Friday
+Monday morning
+Friday afternoon
+Thursday lunchtime
+this Friday
+end of week
+the end of the week
+end of next week
+end of sprint
+the end of the sprint
+the next sprint
+the next release
+end of month
+the end of the month
+the end of the quarter
+mid-month
+next week
+the week after next
+early next week
+the next all-hands
+the next board meeting
+the offsite
+the next planning session
+the code freeze
+the quarterly review
+close of business
+the first of next month

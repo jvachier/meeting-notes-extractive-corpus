@@ -1,0 +1,44 @@
+SEEDING BRIEF: quick_sync
+=========================
+Read with the `write-seed-segments` skill, which holds the shared labelling rules. This brief
+only adds what is specific to quick syncs.
+
+THE MEETING
+- 2–3 people, 150–300 words in total, often unscheduled ("got five minutes?").
+- One narrow topic: unblock a task, agree a next step, hand something over.
+- Very little ceremony. Context is one or two lines; closing is a quick "cool, thanks".
+- Dense in action items: most quick syncs end with at least one owner + deadline.
+
+REGISTER
+- Informal, short turns, first names, contractions, half-sentences ("Yep.", "Makes sense.").
+- People talk about the work directly; little background is explained because both sides know it.
+
+WHAT EACH ZONE LOOKS LIKE HERE
+- context (S1 opens): why we're talking. "Quick one about the {CLIENT} renewal before I send it."
+  The purpose sentence is importance 1 only if it states the topic in a notes-worthy way;
+  greetings and "got a sec?" are 0.
+- discussion: the one problem and a fact or two. Important (1): the blocker, the number, the
+  constraint ("Legal needs the signed form before {DATE_REL}."). Chatter (0): "Ugh, again?",
+  "Right, I remember that."
+- decision: small, concrete choices. "Let's just use the old template for now." (1). Agreement
+  lines after it ("Fine by me.") are decision, 0.
+- action_item: the heart of a quick sync. "{S2|owner} will ping {PERSON} today." (1). Often two
+  action items, one per person. Confirmations ("Great.") are action_item, 0.
+- closing: one or two lines. "Okay, that's all I needed." (0). A follow-up time ("Let's check
+  back {DATE_REL}.") is 1.
+
+GOOD SEGMENT SHAPES
+- 2–5 sentences. Quick syncs rarely need 8+ sentences in one segment.
+- Action segments where the owner volunteers ("I can take that") and the requester confirms.
+- An action item that is negotiated: first deadline rejected, second one accepted (only the
+  final commitment is 1).
+
+AVOID
+- Long status reports (that's a standup) or formal decision language (that's a review).
+- Every segment ending in "Thanks!": vary the last line.
+
+EXAMPLE (action_item, quick_sync, customer_support)
+{"speaker": "S1", "text": "Can someone reply to the {CLIENT} ticket before they escalate?", "importance": 0, "zone": "discussion"}
+{"speaker": "S2", "text": "I've got context on that one.", "importance": 0, "zone": "action_item"}
+{"speaker": "S2", "text": "{S2|owner} will answer it by {DATE_REL|deadline}.", "importance": 1, "zone": "action_item"}
+{"speaker": "S1", "text": "Perfect, thank you.", "importance": 0, "zone": "action_item"}

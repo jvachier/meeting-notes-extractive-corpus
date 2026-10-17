@@ -1,0 +1,43 @@
+SEEDING BRIEF: standup
+======================
+Read with the `write-seed-segments` skill, which holds the shared labelling rules. This brief
+only adds what is specific to standups.
+
+THE MEETING
+- 3–6 people, 300–450 words, a recurring daily or twice-weekly slot with a facilitator (S1).
+- Round-robin: each person gives yesterday / today / blockers. Problems are flagged, not solved
+  ("let's take that offline").
+- Few decisions; action items are mostly "I'll pair with X" or "I'll unblock Y today".
+
+REGISTER
+- Brisk and routine. Lots of repeated structure ("Yesterday I…", "Today I'm on…").
+- People mention tickets, tools and teammates in passing: use {TOOL}, {PROJECT}, {PERSON}.
+
+WHAT EACH ZONE LOOKS LIKE HERE
+- context: the facilitator starts the round. "Morning, let's go round, {S2} you're first." (0).
+  A line that sets the day's focus ("We're two days from the {PROJECT} cutover, so blockers
+  first.") is 1.
+- discussion: the status updates themselves. Important (1): a blocker, a slip, a risk, a
+  status change that matters ("The migration is done and live." / "I'm blocked on access to
+  {TOOL}."). Routine progress with no news is 0 ("Still working on the same ticket.").
+  This is where the 30% target bites: most status lines are 0, the news is 1.
+- decision: rare and small. "Okay, we skip the demo this week." (1).
+- action_item: unblocking moves. "{S3|owner} will give you access right after this." (1).
+  "Let's take it offline" with no owner is NOT an action item (0, discussion).
+- closing: "Thanks all, that's it." (0). Nothing else usually.
+
+GOOD SEGMENT SHAPES
+- One person's full update (3–5 sentences, same speaker) with one important line among
+  routine ones. Vary which position the important line takes.
+- A blocker raised by one person, answered by another who takes an action item.
+- Two quick updates in one segment, from S2 and S3.
+
+AVOID
+- Making every status line important. Notes from a standup keep blockers and changes.
+- Deep debates: a standup cuts them off.
+
+EXAMPLE (discussion, standup, engineering)
+{"speaker": "S2", "text": "Yesterday I finished the retry logic for the importer.", "importance": 0, "zone": "discussion"}
+{"speaker": "S2", "text": "Today I'm writing tests for it.", "importance": 0, "zone": "discussion"}
+{"speaker": "S2", "text": "One thing: staging has been down since this morning, so I can't verify anything.", "importance": 1, "zone": "discussion"}
+{"speaker": "S1", "text": "Ouch, okay, noted.", "importance": 0, "zone": "discussion"}

@@ -1,0 +1,256 @@
+{"filler_id": "fill-001", "text": "Can everyone hear me?", "tag": "opening"}
+{"filler_id": "fill-002", "text": "Hi everyone.", "tag": "opening"}
+{"filler_id": "fill-003", "text": "Hey, how's it going?", "tag": "opening"}
+{"filler_id": "fill-004", "text": "Morning, everyone.", "tag": "opening"}
+{"filler_id": "fill-005", "text": "Good afternoon, all.", "tag": "opening"}
+{"filler_id": "fill-006", "text": "Hi, sorry I'm a couple of minutes late.", "tag": "opening"}
+{"filler_id": "fill-007", "text": "Let's give people another minute to join.", "tag": "opening"}
+{"filler_id": "fill-008", "text": "I think a few people are still joining.", "tag": "opening"}
+{"filler_id": "fill-009", "text": "Is everyone here?", "tag": "opening"}
+{"filler_id": "fill-010", "text": "Are we waiting for anyone else?", "tag": "opening"}
+{"filler_id": "fill-011", "text": "How was everyone's weekend?", "tag": "opening"}
+{"filler_id": "fill-012", "text": "Did you have a good weekend?", "tag": "opening"}
+{"filler_id": "fill-013", "text": "How was your holiday?", "tag": "opening"}
+{"filler_id": "fill-014", "text": "Happy Monday, everyone.", "tag": "opening"}
+{"filler_id": "fill-015", "text": "Happy Friday.", "tag": "opening"}
+{"filler_id": "fill-016", "text": "Can you hear me now?", "tag": "opening"}
+{"filler_id": "fill-017", "text": "Hi, can you see me?", "tag": "opening"}
+{"filler_id": "fill-018", "text": "Sorry, my camera isn't working today.", "tag": "opening"}
+{"filler_id": "fill-019", "text": "I'm joining from my phone today.", "tag": "opening"}
+{"filler_id": "fill-020", "text": "I'm on the train, so I might drop.", "tag": "opening"}
+{"filler_id": "fill-021", "text": "Sorry, I just came from another call.", "tag": "opening"}
+{"filler_id": "fill-022", "text": "Back-to-back meetings today, sorry.", "tag": "opening"}
+{"filler_id": "fill-023", "text": "Is this the right link?", "tag": "opening"}
+{"filler_id": "fill-024", "text": "I think the meeting link changed.", "tag": "opening"}
+{"filler_id": "fill-025", "text": "Hi, hi.", "tag": "opening"}
+{"filler_id": "fill-026", "text": "Hey all, give me a second to set up.", "tag": "opening"}
+{"filler_id": "fill-027", "text": "Let me just close a few tabs.", "tag": "opening"}
+{"filler_id": "fill-028", "text": "Is it raining where you are?", "tag": "opening"}
+{"filler_id": "fill-029", "text": "It's freezing here today.", "tag": "opening"}
+{"filler_id": "fill-030", "text": "It's so hot in this room.", "tag": "opening"}
+{"filler_id": "fill-031", "text": "Did everyone get coffee?", "tag": "opening"}
+{"filler_id": "fill-032", "text": "I definitely need another coffee.", "tag": "opening"}
+{"filler_id": "fill-033", "text": "Hope everyone's well.", "tag": "opening"}
+{"filler_id": "fill-034", "text": "Good to see everyone.", "tag": "opening"}
+{"filler_id": "fill-035", "text": "Long time no see.", "tag": "opening"}
+{"filler_id": "fill-036", "text": "Nice background, by the way.", "tag": "opening"}
+{"filler_id": "fill-037", "text": "Is that a new office?", "tag": "opening"}
+{"filler_id": "fill-038", "text": "Are you working from home today?", "tag": "opening"}
+{"filler_id": "fill-039", "text": "Sorry, the room booking ran over.", "tag": "opening"}
+{"filler_id": "fill-040", "text": "We're all in the meeting room on this end.", "tag": "opening"}
+{"filler_id": "fill-041", "text": "Hello from the office.", "tag": "opening"}
+{"filler_id": "fill-042", "text": "Okay, I think that's everyone.", "tag": "opening"}
+{"filler_id": "fill-043", "text": "Shall we get started?", "tag": "opening"}
+{"filler_id": "fill-044", "text": "Let's wait one more minute.", "tag": "opening"}
+{"filler_id": "fill-045", "text": "Sorry, my calendar didn't show this one.", "tag": "opening"}
+{"filler_id": "fill-046", "text": "Thanks, everyone.", "tag": "closing_chatter"}
+{"filler_id": "fill-047", "text": "Thanks all.", "tag": "closing_chatter"}
+{"filler_id": "fill-048", "text": "Bye, everyone.", "tag": "closing_chatter"}
+{"filler_id": "fill-049", "text": "Bye.", "tag": "closing_chatter"}
+{"filler_id": "fill-050", "text": "See you.", "tag": "closing_chatter"}
+{"filler_id": "fill-051", "text": "See you tomorrow.", "tag": "closing_chatter"}
+{"filler_id": "fill-052", "text": "Talk soon.", "tag": "closing_chatter"}
+{"filler_id": "fill-053", "text": "Have a good weekend.", "tag": "closing_chatter"}
+{"filler_id": "fill-054", "text": "Have a great day.", "tag": "closing_chatter"}
+{"filler_id": "fill-055", "text": "Enjoy the rest of your day.", "tag": "closing_chatter"}
+{"filler_id": "fill-056", "text": "Cheers.", "tag": "closing_chatter"}
+{"filler_id": "fill-057", "text": "Thanks, bye.", "tag": "closing_chatter"}
+{"filler_id": "fill-058", "text": "Take care.", "tag": "closing_chatter"}
+{"filler_id": "fill-059", "text": "Catch you later.", "tag": "closing_chatter"}
+{"filler_id": "fill-060", "text": "See you around.", "tag": "closing_chatter"}
+{"filler_id": "fill-061", "text": "Thanks for your time.", "tag": "closing_chatter"}
+{"filler_id": "fill-062", "text": "Thanks, that was useful.", "tag": "closing_chatter"}
+{"filler_id": "fill-063", "text": "Good meeting, everyone.", "tag": "closing_chatter"}
+{"filler_id": "fill-064", "text": "Nice one, thanks.", "tag": "closing_chatter"}
+{"filler_id": "fill-065", "text": "Thanks for organising.", "tag": "closing_chatter"}
+{"filler_id": "fill-066", "text": "Bye for now.", "tag": "closing_chatter"}
+{"filler_id": "fill-067", "text": "Have a good evening.", "tag": "closing_chatter"}
+{"filler_id": "fill-068", "text": "Enjoy your holiday.", "tag": "closing_chatter"}
+{"filler_id": "fill-069", "text": "Safe travels.", "tag": "closing_chatter"}
+{"filler_id": "fill-070", "text": "Enjoy the sunshine.", "tag": "closing_chatter"}
+{"filler_id": "fill-071", "text": "Stay dry out there.", "tag": "closing_chatter"}
+{"filler_id": "fill-072", "text": "I'll let you all go.", "tag": "closing_chatter"}
+{"filler_id": "fill-073", "text": "I'll give you some time back.", "tag": "closing_chatter"}
+{"filler_id": "fill-074", "text": "Ten minutes back, nice.", "tag": "closing_chatter"}
+{"filler_id": "fill-075", "text": "Enjoy the extra time.", "tag": "closing_chatter"}
+{"filler_id": "fill-076", "text": "I have to jump to another call.", "tag": "closing_chatter"}
+{"filler_id": "fill-077", "text": "Sorry, I need to drop.", "tag": "closing_chatter"}
+{"filler_id": "fill-078", "text": "I've got a hard stop, sorry.", "tag": "closing_chatter"}
+{"filler_id": "fill-079", "text": "Okay, I'll hang up now.", "tag": "closing_chatter"}
+{"filler_id": "fill-080", "text": "Who's ending the call?", "tag": "closing_chatter"}
+{"filler_id": "fill-081", "text": "Thanks, have a good one.", "tag": "closing_chatter"}
+{"filler_id": "fill-082", "text": "Speak soon.", "tag": "closing_chatter"}
+{"filler_id": "fill-083", "text": "Ciao.", "tag": "closing_chatter"}
+{"filler_id": "fill-084", "text": "Later, everyone.", "tag": "closing_chatter"}
+{"filler_id": "fill-085", "text": "Right, back to work.", "tag": "closing_chatter"}
+{"filler_id": "fill-086", "text": "Off to lunch.", "tag": "closing_chatter"}
+{"filler_id": "fill-087", "text": "Time for lunch, I think.", "tag": "closing_chatter"}
+{"filler_id": "fill-088", "text": "Okay, bye bye.", "tag": "closing_chatter"}
+{"filler_id": "fill-089", "text": "Thanks again.", "tag": "closing_chatter"}
+{"filler_id": "fill-090", "text": "Appreciate it, everyone.", "tag": "closing_chatter"}
+{"filler_id": "fill-091", "text": "Have a good night.", "tag": "closing_chatter"}
+{"filler_id": "fill-092", "text": "See you all.", "tag": "closing_chatter"}
+{"filler_id": "fill-093", "text": "Take it easy.", "tag": "closing_chatter"}
+{"filler_id": "fill-094", "text": "Have a nice weekend, all.", "tag": "closing_chatter"}
+{"filler_id": "fill-095", "text": "Yeah."}
+{"filler_id": "fill-096", "text": "Yep."}
+{"filler_id": "fill-097", "text": "Right."}
+{"filler_id": "fill-098", "text": "Okay."}
+{"filler_id": "fill-099", "text": "Sure."}
+{"filler_id": "fill-100", "text": "Mm-hmm."}
+{"filler_id": "fill-101", "text": "Uh-huh."}
+{"filler_id": "fill-102", "text": "Got it."}
+{"filler_id": "fill-103", "text": "I see."}
+{"filler_id": "fill-104", "text": "Oh, okay."}
+{"filler_id": "fill-105", "text": "Oh, interesting."}
+{"filler_id": "fill-106", "text": "Hmm."}
+{"filler_id": "fill-107", "text": "Huh."}
+{"filler_id": "fill-108", "text": "Right, right."}
+{"filler_id": "fill-109", "text": "Yeah, yeah."}
+{"filler_id": "fill-110", "text": "Okay, cool."}
+{"filler_id": "fill-111", "text": "Cool."}
+{"filler_id": "fill-112", "text": "Nice."}
+{"filler_id": "fill-113", "text": "Interesting."}
+{"filler_id": "fill-114", "text": "Oh wow."}
+{"filler_id": "fill-115", "text": "Ah, okay."}
+{"filler_id": "fill-116", "text": "Okay, yeah."}
+{"filler_id": "fill-117", "text": "Right, okay."}
+{"filler_id": "fill-118", "text": "Mm, okay."}
+{"filler_id": "fill-119", "text": "Oh, right."}
+{"filler_id": "fill-120", "text": "Oh, I see."}
+{"filler_id": "fill-121", "text": "Ah, got it."}
+{"filler_id": "fill-122", "text": "Uh, yeah."}
+{"filler_id": "fill-123", "text": "Okay, noted."}
+{"filler_id": "fill-124", "text": "Alright."}
+{"filler_id": "fill-125", "text": "Alrighty."}
+{"filler_id": "fill-126", "text": "Yeah, I'm following."}
+{"filler_id": "fill-127", "text": "I'm with you."}
+{"filler_id": "fill-128", "text": "Following so far."}
+{"filler_id": "fill-129", "text": "Okay, go on."}
+{"filler_id": "fill-130", "text": "Keep going."}
+{"filler_id": "fill-131", "text": "Go on."}
+{"filler_id": "fill-132", "text": "Sorry, carry on."}
+{"filler_id": "fill-133", "text": "Sorry, go ahead."}
+{"filler_id": "fill-134", "text": "No, you go."}
+{"filler_id": "fill-135", "text": "Sorry, I cut you off."}
+{"filler_id": "fill-136", "text": "Sorry, you first."}
+{"filler_id": "fill-137", "text": "Please, go ahead."}
+{"filler_id": "fill-138", "text": "Sorry, we talked over each other."}
+{"filler_id": "fill-139", "text": "Sorry, I think you're on mute."}
+{"filler_id": "fill-140", "text": "You're on mute."}
+{"filler_id": "fill-141", "text": "Can you repeat that?"}
+{"filler_id": "fill-142", "text": "Sorry, you broke up a bit."}
+{"filler_id": "fill-143", "text": "Could you say that again?"}
+{"filler_id": "fill-144", "text": "Sorry, I missed the last part."}
+{"filler_id": "fill-145", "text": "I lost you for a second."}
+{"filler_id": "fill-146", "text": "Your audio is a bit choppy."}
+{"filler_id": "fill-147", "text": "Is that better?"}
+{"filler_id": "fill-148", "text": "Can you hear me okay?"}
+{"filler_id": "fill-149", "text": "Let me turn my camera off, my connection is bad."}
+{"filler_id": "fill-150", "text": "Sorry, there's some background noise here."}
+{"filler_id": "fill-151", "text": "One second, someone's at the door."}
+{"filler_id": "fill-152", "text": "Sorry, my dog is barking."}
+{"filler_id": "fill-153", "text": "Sorry, the kids just got home."}
+{"filler_id": "fill-154", "text": "Hang on a sec."}
+{"filler_id": "fill-155", "text": "Just a moment."}
+{"filler_id": "fill-156", "text": "Bear with me."}
+{"filler_id": "fill-157", "text": "Let me find that."}
+{"filler_id": "fill-158", "text": "Let me pull that up."}
+{"filler_id": "fill-159", "text": "Give me one second."}
+{"filler_id": "fill-160", "text": "Sorry, I was muted."}
+{"filler_id": "fill-161", "text": "Sorry, my mic was off."}
+{"filler_id": "fill-162", "text": "Can you see my screen?"}
+{"filler_id": "fill-163", "text": "Is my screen showing?"}
+{"filler_id": "fill-164", "text": "Let me share my screen."}
+{"filler_id": "fill-165", "text": "Can everyone see this?"}
+{"filler_id": "fill-166", "text": "Let me stop sharing."}
+{"filler_id": "fill-167", "text": "Sorry, wrong tab."}
+{"filler_id": "fill-168", "text": "Hold on, it's loading."}
+{"filler_id": "fill-169", "text": "My laptop is being slow today."}
+{"filler_id": "fill-170", "text": "Sorry, I'm getting an echo."}
+{"filler_id": "fill-171", "text": "Who's speaking?"}
+{"filler_id": "fill-172", "text": "Sorry, was that a question for me?"}
+{"filler_id": "fill-173", "text": "Hmm, let me think about that."}
+{"filler_id": "fill-174", "text": "Let me think."}
+{"filler_id": "fill-175", "text": "That's a good question."}
+{"filler_id": "fill-176", "text": "I'm not sure, honestly."}
+{"filler_id": "fill-177", "text": "Um, let me see."}
+{"filler_id": "fill-178", "text": "Uh, where was I?"}
+{"filler_id": "fill-179", "text": "What was I saying?"}
+{"filler_id": "fill-180", "text": "Sorry, I lost my train of thought."}
+{"filler_id": "fill-181", "text": "Anyway."}
+{"filler_id": "fill-182", "text": "Anyway, yeah."}
+{"filler_id": "fill-183", "text": "So, yeah."}
+{"filler_id": "fill-184", "text": "Yeah, so."}
+{"filler_id": "fill-185", "text": "Okay, where were we?"}
+{"filler_id": "fill-186", "text": "Wait, sorry, which one?"}
+{"filler_id": "fill-187", "text": "Sorry, which slide are we on?"}
+{"filler_id": "fill-188", "text": "Sorry, where are we in the agenda?"}
+{"filler_id": "fill-189", "text": "Sorry, I was reading the chat."}
+{"filler_id": "fill-190", "text": "Sorry, I was distracted for a second."}
+{"filler_id": "fill-191", "text": "Sorry, I'm here."}
+{"filler_id": "fill-192", "text": "Still here."}
+{"filler_id": "fill-193", "text": "I'm back, sorry."}
+{"filler_id": "fill-194", "text": "Sorry, I dropped for a second."}
+{"filler_id": "fill-195", "text": "Excuse me."}
+{"filler_id": "fill-196", "text": "Bless you."}
+{"filler_id": "fill-197", "text": "Sorry, I had a frog in my throat."}
+{"filler_id": "fill-198", "text": "Oops, sorry."}
+{"filler_id": "fill-199", "text": "Ah, sorry about that."}
+{"filler_id": "fill-200", "text": "Sorry, someone just messaged me."}
+{"filler_id": "fill-201", "text": "Let me grab some water."}
+{"filler_id": "fill-202", "text": "Ha, yeah."}
+{"filler_id": "fill-203", "text": "Haha, fair."}
+{"filler_id": "fill-204", "text": "That's funny."}
+{"filler_id": "fill-205", "text": "Oh no."}
+{"filler_id": "fill-206", "text": "Oh dear."}
+{"filler_id": "fill-207", "text": "Yikes."}
+{"filler_id": "fill-208", "text": "Classic."}
+{"filler_id": "fill-209", "text": "Fun times."}
+{"filler_id": "fill-210", "text": "Here we go."}
+{"filler_id": "fill-211", "text": "Wow, okay."}
+{"filler_id": "fill-212", "text": "Oh, really?"}
+{"filler_id": "fill-213", "text": "Really?"}
+{"filler_id": "fill-214", "text": "Is that right?"}
+{"filler_id": "fill-215", "text": "No way."}
+{"filler_id": "fill-216", "text": "Seriously?"}
+{"filler_id": "fill-217", "text": "Ah, that one."}
+{"filler_id": "fill-218", "text": "Oh, that thing."}
+{"filler_id": "fill-219", "text": "Sure, sure."}
+{"filler_id": "fill-220", "text": "Uh, okay."}
+{"filler_id": "fill-221", "text": "Um."}
+{"filler_id": "fill-222", "text": "Uh."}
+{"filler_id": "fill-223", "text": "Hmm, okay."}
+{"filler_id": "fill-224", "text": "Okay, okay."}
+{"filler_id": "fill-225", "text": "Right, yeah."}
+{"filler_id": "fill-226", "text": "Gotcha."}
+{"filler_id": "fill-227", "text": "Understood."}
+{"filler_id": "fill-228", "text": "Roger."}
+{"filler_id": "fill-229", "text": "No worries."}
+{"filler_id": "fill-230", "text": "Sorry about that."}
+{"filler_id": "fill-231", "text": "Sorry, go on."}
+{"filler_id": "fill-232", "text": "Sorry, that was me."}
+{"filler_id": "fill-233", "text": "Sorry, continue."}
+{"filler_id": "fill-234", "text": "Mhm, yeah."}
+{"filler_id": "fill-235", "text": "I hear you."}
+{"filler_id": "fill-236", "text": "Okay, I think I get it."}
+{"filler_id": "fill-237", "text": "Oh, that's a good one."}
+{"filler_id": "fill-238", "text": "Let me just write that down."}
+{"filler_id": "fill-239", "text": "Sorry, typing."}
+{"filler_id": "fill-240", "text": "Sorry, I'm taking notes."}
+{"filler_id": "fill-241", "text": "One sec, I'm taking notes."}
+{"filler_id": "fill-242", "text": "Okay, I've got that down."}
+{"filler_id": "fill-243", "text": "Did I miss anything?"}
+{"filler_id": "fill-244", "text": "Sorry, did someone say something?"}
+{"filler_id": "fill-245", "text": "I think someone else is talking."}
+{"filler_id": "fill-246", "text": "There's a weird delay on this call."}
+{"filler_id": "fill-247", "text": "Sorry, the audio cut out."}
+{"filler_id": "fill-248", "text": "Can you speak up a little?"}
+{"filler_id": "fill-249", "text": "Sorry, can you move closer to the mic?"}
+{"filler_id": "fill-250", "text": "That's much better."}
+{"filler_id": "fill-251", "text": "Okay, I can hear you now."}
+{"filler_id": "fill-252", "text": "Sorry, my headphones died."}
+{"filler_id": "fill-253", "text": "Switching to my laptop speakers, one second."}
+{"filler_id": "fill-254", "text": "Sorry, my internet is acting up."}
+{"filler_id": "fill-255", "text": "Okay, I'm back on."}
+{"filler_id": "fill-256", "text": "I'm on the line now."}

@@ -1,0 +1,65 @@
+# Month and day; reads after "by" and "on". Plain and ordinal forms mixed.
+January 3
+January 8th
+January 14
+January 22nd
+January 30
+February 2nd
+February 6
+February 11th
+February 19
+February 27th
+March 1
+March 9th
+March 13
+March 17th
+March 28
+April 4th
+April 12
+April 16th
+April 21
+April 29th
+May 6
+May 11th
+May 15
+May 23rd
+May 31
+June 2nd
+June 10
+June 13th
+June 18
+June 26th
+July 7
+July 11th
+July 16
+July 24th
+July 30
+August 5th
+August 13
+August 20th
+August 22
+August 28th
+September 3
+September 8th
+September 12
+September 19th
+September 30
+October 1st
+October 9
+October 14th
+October 17
+October 27th
+November 4
+November 14th
+November 18
+November 20th
+November 25
+December 2nd
+December 5
+December 10th
+December 16
+December 19th
+the 1st of March
+the 15th of May
+the 30th of June
+the 1st of October

@@ -1,0 +1,52 @@
+# Target number of FAMILIES per (zone × meeting type × domain) cell (PLAN §3.4).
+# Each family has `variants_per_family` paraphrase variants (segments).
+# A family counts toward the cell named in its family_id (its file's meeting type).
+# Totals: context 60, discussion 240, decision 120, action_item 120, closing 40 = 580.
+
+variants_per_family: 2
+min_families_per_zone_domain: 1
+min_families_per_zone_meeting_type: 3
+
+segments:
+  context:
+    quick_sync: {engineering: 2, product: 1, sales: 2, marketing: 1, customer_support: 2, hr_people: 1, finance_ops: 2, research: 1}
+    standup: {engineering: 1, product: 2, sales: 1, marketing: 2, customer_support: 1, hr_people: 2, finance_ops: 1, research: 2}
+    project_review: {engineering: 2, product: 1, sales: 2, marketing: 1, customer_support: 2, hr_people: 1, finance_ops: 2, research: 1}
+    stakeholder_update: {engineering: 1, product: 2, sales: 1, marketing: 2, customer_support: 1, hr_people: 2, finance_ops: 1, research: 2}
+    retrospective: {engineering: 2, product: 1, sales: 2, marketing: 1, customer_support: 2, hr_people: 1, finance_ops: 2, research: 1}
+  discussion:
+    quick_sync: {engineering: 6, product: 6, sales: 6, marketing: 6, customer_support: 6, hr_people: 6, finance_ops: 6, research: 6}
+    standup: {engineering: 6, product: 6, sales: 6, marketing: 6, customer_support: 6, hr_people: 6, finance_ops: 6, research: 6}
+    project_review: {engineering: 6, product: 6, sales: 6, marketing: 6, customer_support: 6, hr_people: 6, finance_ops: 6, research: 6}
+    stakeholder_update: {engineering: 6, product: 6, sales: 6, marketing: 6, customer_support: 6, hr_people: 6, finance_ops: 6, research: 6}
+    retrospective: {engineering: 6, product: 6, sales: 6, marketing: 6, customer_support: 6, hr_people: 6, finance_ops: 6, research: 6}
+  decision:
+    quick_sync: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    standup: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    project_review: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    stakeholder_update: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    retrospective: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+  action_item:
+    quick_sync: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    standup: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    project_review: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    stakeholder_update: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+    retrospective: {engineering: 3, product: 3, sales: 3, marketing: 3, customer_support: 3, hr_people: 3, finance_ops: 3, research: 3}
+  closing:
+    quick_sync: {engineering: 1, product: 1, sales: 1, marketing: 1, customer_support: 1, hr_people: 1, finance_ops: 1, research: 1}
+    standup: {engineering: 1, product: 1, sales: 1, marketing: 1, customer_support: 1, hr_people: 1, finance_ops: 1, research: 1}
+    project_review: {engineering: 1, product: 1, sales: 1, marketing: 1, customer_support: 1, hr_people: 1, finance_ops: 1, research: 1}
+    stakeholder_update: {engineering: 1, product: 1, sales: 1, marketing: 1, customer_support: 1, hr_people: 1, finance_ops: 1, research: 1}
+    retrospective: {engineering: 1, product: 1, sales: 1, marketing: 1, customer_support: 1, hr_people: 1, finance_ops: 1, research: 1}
+
+# PLAN §3.5: 150 families × 2 variants = 300 segments.
+hard_negatives:
+  variants_per_family: 2
+  categories:
+    rejected_proposal: 25
+    tentative_idea: 25
+    ownerless_task: 25
+    reversed_decision: 20
+    reported_elsewhere: 20
+    hypothetical: 20
+    question_not_commitment: 15
