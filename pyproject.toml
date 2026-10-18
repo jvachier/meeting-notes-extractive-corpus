@@ -1,6 +1,6 @@
 [project]
 name = "meeting-notes-extractive-corpus"
-version = "1.0.0"
+version = "1.0.1"
 description = "Builds meeting-notes-extractive-v1: sentence-labelled meeting transcripts (importance + zone)."
 readme = "README.md"
 requires-python = ">=3.11"
