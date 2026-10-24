@@ -61,9 +61,16 @@ def test_validate_rows_rejects_bad_order(corpus):
         validate_rows(rows)
 
 
-def test_export_layout_types_and_card(corpus, tmp_path):
+def test_export_layout_types_and_card(corpus, tmp_path, release):
     scfg, _, sentences, notes = corpus
-    stats = export(sentences, notes, scfg, tmp_path)
+    stats = export(sentences, notes, scfg, tmp_path, release)
+    card_text = (tmp_path / "README.md").read_text()
+    snippet = f'load_dataset("{release.hf_repo_id}", "synthetic", revision="{release.tag}")'
+    assert snippet in card_text
+    assert release.source_repo_url in card_text
+    kaggle = json.loads((tmp_path / "dataset-metadata.json").read_text())
+    assert kaggle["id"] == release.kaggle_dataset_id
+    assert stats["provenance"]["repository"] == release.source_repo_url
     for config in ("synthetic", "ami"):
         for table, schema in (("sentences", SENTENCE_SCHEMA), ("notes", NOTE_SCHEMA)):
             for split in ("train", "validation", "test"):

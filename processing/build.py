@@ -18,6 +18,7 @@ from generation import generate_hard_negatives, generate_synthetic_notes, relabe
 from generation.config import DEFAULT_CONFIG, load_config
 from generation.output import DATA_DIR, NOTE_SCHEMA, SENTENCE_SCHEMA, to_table, write_parquet
 from processing import assign_splits, export_parquet, quality_checks, unify
+from processing.release_config import load_release_settings
 
 TINY_CONFIG = DEFAULT_CONFIG.parent / "generation_tiny.yaml"
 
@@ -26,6 +27,7 @@ def run_pipeline(
     config: Path, root: Path, seed: int | None = None, *, report: bool = True
 ) -> dict[str, Path]:
     """Build everything under ``root`` (a ``data/``-like folder); return the main paths."""
+    load_release_settings()  # fail now, not after generation, if .env is missing
     cfg = load_config(config)
     seed_args = [] if seed is None else ["--seed", str(seed)]
     common = ["--config", str(config), *seed_args]

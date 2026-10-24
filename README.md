@@ -126,8 +126,8 @@ After the v1.0 release on the Hugging Face Hub:
 ```python
 from datasets import load_dataset
 
-synthetic = load_dataset("jvachier/meeting-notes-extractive-v1", "synthetic", revision="v1.0")
-ami = load_dataset("jvachier/meeting-notes-extractive-v1", "ami", revision="v1.0")
+synthetic = load_dataset("<hf-user>/meeting-notes-extractive-v1", "synthetic", revision="v1.0")
+ami = load_dataset("<hf-user>/meeting-notes-extractive-v1", "ami", revision="v1.0")
 ```
 
 Until then, [build it locally](#reproducing-the-build) and read the Parquet files directly:
@@ -267,6 +267,7 @@ Requirements: Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync                                                  # create the environment
+cp .env.example .env                                     # then fill in your release IDs
 uv run python -m generation.relabel_ami --download       # fetch AMI annotations (once)
 uv run python -m processing.build                        # full pipeline → data/release/v1
 uv run python -m processing.quality_checks --determinism # quality report + byte-identity check
@@ -276,7 +277,10 @@ The build takes about 25 seconds on a laptop and writes the quality report to
 `data/processed/report.md`. All volumes, ratios, probabilities and length ranges are in
 [`configs/generation.yaml`](configs/generation.yaml), and every script accepts `--seed`.
 [`configs/generation_tiny.yaml`](configs/generation_tiny.yaml) is a smoke configuration that
-runs in a few seconds.
+runs in a few seconds. Release metadata (version, tag, titles) is in
+[`configs/release.yaml`](configs/release.yaml); the Hugging Face repo, Kaggle dataset and
+source repository URL are read from the git-ignored `.env` (template:
+[`.env.example`](.env.example)) or from environment variables of the same names.
 
 ### Development
 
