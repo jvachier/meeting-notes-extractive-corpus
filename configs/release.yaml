@@ -1,0 +1,12 @@
+# Release metadata (PLAN §6), read by processing/export_parquet.py and processing/publish.py.
+# Account-specific IDs and links (Hugging Face repo, Kaggle dataset, source repository URL)
+# are not committed: they come from .env or the environment (see .env.example).
+version: "1.0.0"
+tag: v1.0
+title: Meeting Notes Extractive v1
+subtitle: Sentence-level importance and zone labels for meeting transcripts
+kaggle_licence: CC-BY-4.0
+kaggle_keywords:
+  - nlp
+  - text classification
+  - summarization

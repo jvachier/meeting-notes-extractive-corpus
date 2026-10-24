@@ -31,10 +31,13 @@ import pyarrow.compute as pc
 from generation.config import DEFAULT_CONFIG, REPO_ROOT, GenerationConfig, load_config
 from generation.output import PROCESSED_DIR, RELEASE_DIR, read_parquet, write_parquet
 from processing.assign_splits import SPLIT_ORDER
+from processing.release_config import (
+    DEFAULT_RELEASE_CONFIG,
+    ReleaseConfigError,
+    ReleaseSettings,
+    load_release_settings,
+)
 
-VERSION = "1.0.0"
-REPO_URL = "https://github.com/jvachier/meeting-notes-extractive-corpus"
-HF_ID = "jvachier/meeting-notes-extractive-v1"
 CONFIG_SOURCES: dict[str, tuple[str, ...]] = {
     "synthetic": ("synthetic", "synthetic_hn"),
     "ami": ("ami",),
@@ -116,7 +119,12 @@ def reuse_stats(sentences: pa.Table) -> dict[str, Any]:
     }
 
 
-def dataset_card(stats: dict[str, Any], provenance: dict[str, Any], reuse: dict[str, Any]) -> str:
+def dataset_card(
+    stats: dict[str, Any],
+    provenance: dict[str, Any],
+    reuse: dict[str, Any],
+    release: ReleaseSettings,
+) -> str:
     """Hugging Face dataset card with YAML front matter."""
     configs = []
     for config in CONFIG_SOURCES:
@@ -141,7 +149,7 @@ def dataset_card(stats: dict[str, Any], provenance: dict[str, Any], reuse: dict[
 license: cc-by-4.0
 language:
   - en
-pretty_name: Meeting Notes Extractive v1
+pretty_name: {release.title}
 size_categories:
   - 100K<n<1M
 task_categories:
@@ -160,7 +168,7 @@ configs:
 ---
 """
     body = f"""
-# Meeting Notes Extractive v1
+# {release.title}
 
 Meeting transcripts in which **every sentence** carries two labels:
 
@@ -170,7 +178,7 @@ Meeting transcripts in which **every sentence** carries two labels:
 Action-item sentences in the synthetic layer also carry character `spans` for the **owner**
 and the **deadline**.
 
-Source code, seeds and the full build pipeline: [{REPO_URL}]({REPO_URL})
+Source code, seeds and the full build pipeline: [{release.source_repo_url}]({release.source_repo_url})
 (built from commit `{provenance["git_commit"][:12]}`).
 
 ## Configurations
@@ -185,8 +193,8 @@ Source code, seeds and the full build pipeline: [{REPO_URL}]({REPO_URL})
 ```python
 from datasets import load_dataset
 
-synthetic = load_dataset("{HF_ID}", "synthetic", revision="v1.0")
-ami = load_dataset("{HF_ID}", "ami", revision="v1.0")
+synthetic = load_dataset("{release.hf_repo_id}", "synthetic", revision="{release.tag}")
+ami = load_dataset("{release.hf_repo_id}", "ami", revision="{release.tag}")
 ```
 
 ## Statistics
@@ -282,28 +290,32 @@ Provenance: version {provenance["version"]}, generation seed {provenance["seed"]
     return front + body
 
 
-def kaggle_metadata() -> dict[str, Any]:
+def kaggle_metadata(release: ReleaseSettings) -> dict[str, Any]:
     """``dataset-metadata.json`` for the Kaggle CLI."""
     return {
-        "title": "Meeting Notes Extractive v1",
-        "id": "jvachier/meeting-notes-extractive-v1",
-        "subtitle": "Sentence-level importance and zone labels for meeting transcripts",
-        "description": f"See README.md. Source and pipeline: {REPO_URL}",
-        "licenses": [{"name": "CC-BY-4.0"}],
-        "keywords": ["nlp", "text classification", "summarization"],
+        "title": release.title,
+        "id": release.kaggle_dataset_id,
+        "subtitle": release.subtitle,
+        "description": f"See README.md. Source and pipeline: {release.source_repo_url}",
+        "licenses": [{"name": release.kaggle_licence}],
+        "keywords": list(release.kaggle_keywords),
     }
 
 
 def export(
-    sentences: pa.Table, notes: pa.Table, cfg: GenerationConfig, out: Path
+    sentences: pa.Table,
+    notes: pa.Table,
+    cfg: GenerationConfig,
+    out: Path,
+    release: ReleaseSettings,
 ) -> dict[str, Any]:
     """Write the full release folder and return ``stats.json`` content."""
     files = write_files(sentences, notes, out)
     provenance = {
-        "version": VERSION,
+        "version": release.version,
         "seed": cfg.seed,
         "git_commit": _git_commit(),
-        "repository": REPO_URL,
+        "repository": release.source_repo_url,
     }
     reuse = reuse_stats(sentences.filter(pc.not_equal(sentences["source"], "ami")))
     stats = {
@@ -314,10 +326,10 @@ def export(
     }
     (out / "stats.json").write_text(json.dumps(stats, indent=2) + "\n", encoding="utf-8")
     (out / "README.md").write_text(
-        dataset_card(stats["splits"], provenance, reuse), encoding="utf-8"
+        dataset_card(stats["splits"], provenance, reuse, release), encoding="utf-8"
     )
     (out / "dataset-metadata.json").write_text(
-        json.dumps(kaggle_metadata(), indent=2) + "\n", encoding="utf-8"
+        json.dumps(kaggle_metadata(release), indent=2) + "\n", encoding="utf-8"
     )
     return stats
 
@@ -329,9 +341,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--sentences", type=Path, default=PROCESSED_DIR / "unified_corpus.parquet")
     parser.add_argument("--notes", type=Path, default=PROCESSED_DIR / "unified_notes.parquet")
     parser.add_argument("--out", type=Path, default=RELEASE_DIR / "v1")
+    parser.add_argument("--release-config", type=Path, default=DEFAULT_RELEASE_CONFIG)
     args = parser.parse_args(argv)
+    try:
+        release = load_release_settings(args.release_config)
+    except ReleaseConfigError as exc:
+        parser.error(str(exc))
     stats = export(
-        read_parquet(args.sentences), read_parquet(args.notes), load_config(args.config), args.out
+        read_parquet(args.sentences),
+        read_parquet(args.notes),
+        load_config(args.config),
+        args.out,
+        release,
     )
     print(f"wrote {args.out}: {len(stats['files'])} Parquet files, README.md, stats.json")
     return 0

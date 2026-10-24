@@ -18,9 +18,8 @@ from pathlib import Path
 
 from generation.config import REPO_ROOT
 from generation.output import RELEASE_DIR
-from processing.export_parquet import HF_ID
+from processing.release_config import ReleaseConfigError, load_release_settings
 
-TAG = "v1.0"
 REQUIRED = ("README.md", "stats.json", "dataset-metadata.json")
 
 
@@ -93,12 +92,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--hf", action="store_true", help="publish to the Hugging Face Hub")
     parser.add_argument("--kaggle", action="store_true", help="publish to Kaggle")
     parser.add_argument("--kaggle-new", action="store_true", help="first Kaggle upload (create)")
-    parser.add_argument("--repo-id", default=HF_ID)
-    parser.add_argument("--tag", default=TAG)
+    parser.add_argument("--repo-id", help="default: HF_REPO_ID from .env or the environment")
+    parser.add_argument("--tag", help="default: tag in configs/release.yaml")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
     if not (args.hf or args.kaggle):
         parser.error("choose --hf and/or --kaggle")
+    try:
+        release = load_release_settings()
+    except ReleaseConfigError as exc:
+        parser.error(str(exc))
+    args.repo_id = args.repo_id or release.hf_repo_id
+    args.tag = args.tag or release.tag
     try:
         stats = check_release(args.release, require_clean_commit=not args.dry_run)
     except PublishError as exc:

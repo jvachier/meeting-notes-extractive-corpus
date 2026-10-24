@@ -10,6 +10,27 @@ from typing import Any
 import pytest
 
 from generation.config import DEFAULT_CONFIG, DEFAULT_COVERAGE, load_config, load_coverage
+from processing.release_config import ReleaseSettings, load_release_settings
+
+TEST_RELEASE_ENV = {
+    "HF_REPO_ID": "test-user/meeting-notes-extractive-v1",
+    "KAGGLE_DATASET_ID": "test-kaggle/meeting-notes-extractive-v1",
+    "SOURCE_REPO_URL": "https://example.org/test-user/meeting-notes-extractive-corpus",
+}
+
+
+@pytest.fixture(autouse=True)
+def _release_env(monkeypatch):
+    """Tests never depend on a developer's .env: the environment always wins over it."""
+    for key, value in TEST_RELEASE_ENV.items():
+        monkeypatch.setenv(key, value)
+
+
+@pytest.fixture
+def release() -> ReleaseSettings:
+    """Release settings from configs/release.yaml and the test IDs above."""
+    return load_release_settings()
+
 
 DECISION_SEGMENT: dict[str, Any] = {
     "segment_id": "dec-project_review-eng-003-v1",
