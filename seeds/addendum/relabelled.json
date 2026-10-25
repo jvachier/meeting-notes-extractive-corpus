@@ -1,0 +1,239 @@
+{
+  "reason": "v1.1: a first-person task that no later sentence restates is the sentence that states it, so it is important (PLAN \u00a79c)",
+  "edits": [
+    {
+      "segment_id": "act-project_review-eng-001-v1",
+      "index": 4,
+      "text": "I can help with the load tests afterwards.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-eng-001-v2",
+      "index": 4,
+      "text": "And I'll rerun the load tests once it's in.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-eng-003-v1",
+      "index": 4,
+      "text": "I'll send you my notes on the offline mode risk.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-eng-003-v2",
+      "index": 4,
+      "text": "I'll pass on my notes about offline mode.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-hr-003-v1",
+      "index": 4,
+      "text": "And I'll start planning the desk move.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-hr-003-v2",
+      "index": 4,
+      "text": "I'll plan the move.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-sales-002-v1",
+      "index": 3,
+      "text": "And I'll merge them into the deck.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-project_review-sales-002-v2",
+      "index": 3,
+      "text": "I'll add them to the deck afterwards.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-retrospective-eng-001-v1",
+      "index": 3,
+      "text": "I can help test it.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-retrospective-eng-001-v2",
+      "index": 3,
+      "text": "I'll test it.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-standup-sup-002-v1",
+      "index": 4,
+      "text": "I can review it.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "act-standup-sup-002-v2",
+      "index": 4,
+      "text": "I'll review it.",
+      "from": {
+        "importance": 0,
+        "zone": "action_item"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-project_review-fin-002-v1",
+      "index": 5,
+      "text": "Okay, I can explain that to audit.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-quick_sync-mkt-002-v1",
+      "index": 3,
+      "text": "Okay, I'll adjust the plan.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-quick_sync-res-003-v1",
+      "index": 3,
+      "text": "Okay, I'll rebook.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-quick_sync-res-003-v2",
+      "index": 3,
+      "text": "I'll change the booking.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-quick_sync-sales-001-v1",
+      "index": 3,
+      "text": "Okay, I'll tell them.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    },
+    {
+      "segment_id": "dec-standup-prod-001-v1",
+      "index": 4,
+      "text": "Okay, I'll update the banner.",
+      "from": {
+        "importance": 0,
+        "zone": "decision"
+      },
+      "to": {
+        "importance": 1,
+        "zone": "action_item"
+      }
+    }
+  ]
+}

@@ -23,6 +23,17 @@ serves as the real-world benchmark.
 > **Status:** v1.0 is built and passes all quality checks locally. It is not yet published
 > on the Hugging Face Hub or Kaggle.
 
+## What's new in v1.1
+
+- **First-person tasks.** v1.0 marked a volunteered task ("I'll write the ticket.") as
+  unimportant whenever a chair restated it, and almost every such task was restated. Models
+  trained on it learned to ignore "I'll …". v1.1 relabels the follow-up tasks nobody restates
+  (18 seed sentences, 492 rows) and adds 300 meetings where tasks are only volunteered, terse
+  decisions answer a proposal, and 100 short informal conversations (`personal` domain,
+  train only).
+- **All v1.0 text is unchanged** (byte-identical), so outputs keyed by `(note_id, sentence_id)`
+  stay valid. Test labels are unchanged; AMI is unchanged.
+
 ## Contents
 
 - [Example](#example)

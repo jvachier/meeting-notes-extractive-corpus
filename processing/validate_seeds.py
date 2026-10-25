@@ -340,6 +340,8 @@ def _coverage(
     report.errors.extend(f"coverage shortfall {s}" for s in shortfalls)
     for zone in Zone:
         for domain in Domain:
+            if not any(coverage.target(zone, mt, domain) for mt in MeetingType):
+                continue  # a domain without targets here (e.g. personal, v1.1 addendum only)
             n = sum(v for (z, _, d), v in cells.items() if z == zone and d == domain)
             if n < coverage.min_families_per_zone_domain:
                 report.errors.append(f"coverage: {zone.value}/{domain.value} has {n} families")

@@ -135,3 +135,12 @@ ami:
   partition:
     validation: [ES2003, ES2011, IS1008, TS3004, TS3006]
     test: [ES2004, ES2014, IS1009, TS3003, TS3007]
+
+# §9c v1.1 addendum (generation/generate_addendum.py): new meetings from seeds/addendum.
+addendum:
+  business_per_type: 40      # x 5 meeting types, v1.0 domains
+  personal_meetings: 100     # quick syncs in the personal domain
+  p_cross_domain: 0.0        # personal meetings prefer personal segments
+  seed_offset: 11            # addendum splits and random streams differ from v1.0
+  max_words: 450             # cap on meeting length: the small val/test pools must fill it
+  personal_words: [60, 140]  # informal chats are short (like the app's landlord example)

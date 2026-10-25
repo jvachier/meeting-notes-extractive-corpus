@@ -340,3 +340,30 @@ acceptable only because splits are by family and the measured result is the real
 - Splits assigned before composition (§4.4); release layout with one folder per layer (§6).
 - Seeds include importance-0 echoes ("Wait, {PERCENT}?") and people addressing each other by
   name, so no slot or name predicts importance on its own (checked by §7.5).
+
+## 9c. v1.1: first-person tasks (approved 2026-10-25)
+
+**Why.** In v1.0, a task someone volunteers ("I'll write the ticket.") was always restated by a
+chair ("Great, Sam files it by Friday."), and only the restatement was important. So 93% of
+first-person commitments were labelled 0, and only 2% of important action items were first
+person (AMI: 29% of first-person commitments are important). Note_taker's model learned to
+drop every "I'll …", so conversations where tasks are only volunteered got no action items.
+
+**Rule (clarified).** One sentence per task is important: the one that states it most fully. A
+first-person task that no later sentence restates is that sentence, whoever says it.
+
+**What changed:**
+- **18 seed sentences relabelled** (`seeds/addendum/relabelled.json`): follow-up tasks nobody
+  restates. Hard negatives, agreement ("I can live with that") and options stay 0.
+- **v1.0 meetings relabelled in place** (`processing/relabel_from_seeds.py`): the text is
+  byte-identical, because regenerating would shift later sentences (interrupt fillers depend on
+  labels). 492 rows changed (431 train, 61 validation, 0 test).
+- **97 addendum seed families**, one variant each (`seeds/addendum/segments`):
+  - 40 first-person task families (one per business meeting type × domain)
+  - 24 terse decisions answering a proposal
+  - 33 `personal` families (informal conversations, a new domain used only here)
+- **300 addendum meetings** (`generation/generate_addendum.py`, config `addendum`):
+  - 200 business meetings (≤ 450 words, decision / action segments only from the addendum)
+  - 100 personal quick syncs (60–140 words, personal segments only, train only)
+- **Build:** `uv run python -m processing.build_v1_1` → `data/release/v1.1`. AMI unchanged;
+  quality report PASS.
