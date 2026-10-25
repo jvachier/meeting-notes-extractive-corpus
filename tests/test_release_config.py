@@ -32,7 +32,7 @@ def test_values_come_from_env_file(tmp_path):
     env.write_text("\n".join(f"{k}={v}" for k, v in TEST_RELEASE_ENV.items()), encoding="utf-8")
     settings = load_release_settings(env_file=env, environ={})
     assert settings.hf_repo_id == TEST_RELEASE_ENV["HF_REPO_ID"]
-    assert settings.tag == "v1.0"
+    assert settings.tag == "v1.1"
 
 
 def test_environment_wins_over_env_file(tmp_path):

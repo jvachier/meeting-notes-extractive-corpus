@@ -211,6 +211,17 @@ class AmiConfig(_Strict):
         return Split.TRAIN
 
 
+class AddendumConfig(_Strict):
+    """v1.1 addendum meetings (PLAN §9c, generation/generate_addendum.py)."""
+
+    business_per_type: int = Field(ge=0)
+    personal_meetings: int = Field(ge=0)
+    p_cross_domain: float = Field(ge=0.0, le=1.0)
+    seed_offset: int = Field(ge=1)
+    max_words: int = Field(ge=50)
+    personal_words: tuple[int, int]
+
+
 class GenerationConfig(_Strict):
     """Root of ``configs/generation.yaml``."""
 
@@ -224,14 +235,16 @@ class GenerationConfig(_Strict):
     seeds: SeedsConfig
     lexicons: LexiconsConfig
     quality: QualityConfig
+    addendum: AddendumConfig | None = None
     ami: AmiConfig
 
     @model_validator(mode="after")
     def _complete(self) -> GenerationConfig:
         if set(self.meeting_types) != set(MeetingType):
             raise ValueError("meeting_types must configure all five meeting types")
-        if sorted(self.domains) != sorted(Domain) or len(self.domains) != len(Domain):
-            raise ValueError("domains must list all eight domains once")
+        business = sorted(d for d in Domain if d != Domain.PERSONAL)
+        if sorted(self.domains) != business or len(self.domains) != len(business):
+            raise ValueError("domains must list the eight business domains once")
         return self
 
 
@@ -264,15 +277,15 @@ class Coverage(_Strict):
             if set(self.segments.get(zone, {})) != set(MeetingType):
                 raise ValueError(f"segments.{zone.value} must list all meeting types")
             for meeting_type, cells in self.segments[zone].items():
-                if set(cells) != set(Domain):
+                if not set(cells) <= set(Domain):
                     raise ValueError(
-                        f"segments.{zone.value}.{meeting_type.value} must list all domains"
+                        f"segments.{zone.value}.{meeting_type.value} lists unknown domains"
                     )
         return self
 
     def target(self, zone: Zone, meeting_type: MeetingType, domain: Domain) -> int:
-        """Target number of families for one cell."""
-        return self.segments[zone][meeting_type][domain]
+        """Target number of families for one cell (0 for a domain the file does not list)."""
+        return self.segments[zone][meeting_type].get(domain, 0)
 
     def zone_total(self, zone: Zone) -> int:
         """Target number of families for a zone."""

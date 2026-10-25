@@ -47,6 +47,7 @@ class Domain(StrEnum):
     HR_PEOPLE = "hr_people"
     FINANCE_OPS = "finance_ops"
     RESEARCH = "research"
+    PERSONAL = "personal"  # v1.1 addendum only: informal conversations (not in v1.0 meetings)
 
 
 class HNCategory(StrEnum):
@@ -114,6 +115,7 @@ DOMAIN_ABBR: dict[Domain, str] = {
     Domain.HR_PEOPLE: "hr",
     Domain.FINANCE_OPS: "fin",
     Domain.RESEARCH: "res",
+    Domain.PERSONAL: "pers",
 }
 
 _VARIANT_RE = re.compile(r"^(?P<family>.+)-v(?P<n>[1-9]\d*)$")
